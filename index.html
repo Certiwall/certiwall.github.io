@@ -1,1 +1,172 @@
-Comming soon...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certiwall - Project Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Reset & typography */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; scroll-behavior: smooth; }
+  body { background: #0f0f0f; color:#fff; line-height:1.6; }
+
+  /* Navbar */
+  nav { position: sticky; top:0; z-index:1000; background: rgba(20,20,20,0.9); backdrop-filter: blur(10px); display:flex; justify-content:space-between; align-items:center; padding:15px 50px; box-shadow:0 2px 15px rgba(0,0,0,0.7); }
+  nav .logo { font-weight:bold; font-size:1.6rem; color:#0d6efd; }
+  nav ul { list-style:none; display:flex; gap:30px; }
+  nav ul li { cursor:pointer; transition:0.3s; }
+  nav ul li:hover { color:#0d6efd; }
+
+  /* Hero */
+  .hero { height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background: linear-gradient(135deg,#0d6efd,#6c63ff); border-radius:0 0 50% 50%/0 0 10% 10%; position:relative; overflow:hidden; }
+  .hero h1 { font-size:3.5rem; margin-bottom:20px; animation: slideIn 1s ease forwards; }
+  .hero p { font-size:1.2rem; margin-bottom:30px; animation: slideUp 1.2s ease forwards; }
+  .btn { background:#fff; color:#0d6efd; padding:12px 30px; border-radius:50px; font-weight:bold; text-decoration:none; transition:0.3s; }
+  .btn:hover { background:#6c63ff; color:#fff; transform:translateY(-3px); }
+
+  @keyframes slideIn { from {opacity:0; transform:translateX(-50px);} to {opacity:1; transform:translateX(0);} }
+  @keyframes slideUp { from {opacity:0; transform:translateY(50px);} to {opacity:1; transform:translateY(0);} }
+
+  section { padding:100px 50px; }
+  .container { max-width:1200px; margin:auto; }
+
+  /* Section Titles */
+  h2 { font-size:2.5rem; text-align:center; margin-bottom:50px; position:relative; }
+  h2::after { content:''; width:80px; height:4px; background:#0d6efd; display:block; margin:15px auto 0; border-radius:2px; }
+
+  /* Glass cards */
+  .cards, .testimonials, .users { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+  .card, .testimonial, .user, .docs { background: rgba(255,255,255,0.05); border-radius:20px; padding:30px; box-shadow:0 10px 30px rgba(0,0,0,0.7); backdrop-filter:blur(10px); transition: transform 0.3s, box-shadow 0.3s; }
+  .card:hover, .testimonial:hover, .user:hover, .docs:hover { transform: translateY(-10px); box-shadow:0 15px 40px rgba(0,0,0,0.8); }
+  .card h3, .docs h4 { color:#0d6efd; margin-bottom:15px; }
+  .card p, .docs p, .testimonial p, .user h4 { color:#cfcfcf; }
+
+  /* Testimonials */
+  .testimonial { flex:1 1 300px; border-left:5px solid #0d6efd; }
+
+  /* Users / Clients */
+  .user { width:220px; text-align:center; }
+
+  /* Documentation */
+  .docs { width:100%; max-width:400px; }
+
+  /* Security Hall of Fame */
+  .hof ul { list-style: disc inside; margin-top:20px; color:#dcdcdc; }
+  .hof { text-align:left; }
+
+  /* Footer */
+  footer { text-align:center; padding:40px; background:#121212; color:#888; }
+
+  @media(max-width:768px) {
+    nav ul { flex-direction:column; gap:15px; }
+    .cards, .testimonials, .users { flex-direction:column; align-items:center; }
+    .hero h1 { font-size:2.5rem; }
+    .hero p { font-size:1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">Certiwall</div>
+  <ul>
+    <li onclick="scrollToSection('overview')">Overview</li>
+    <li onclick="scrollToSection('tech')">Tech Stack</li>
+    <li onclick="scrollToSection('docs')">Docs</li>
+    <li onclick="scrollToSection('testimonials')">Testimonials</li>
+    <li onclick="scrollToSection('users')">Users</li>
+    <li onclick="scrollToSection('hof')">Security HOF</li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Certiwall</h1>
+  <p>Design, generate, manage, distribute, and verify digital certificates for universities, colleges, schools, institutes, and small businesses.</p>
+  <a href="#overview" class="btn">Explore</a>
+</section>
+
+<!-- Project Overview -->
+<section id="overview">
+  <div class="container">
+    <h2>Project Overview</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">Certiwall is a software designed to create, generate, manage, distribute, and verify digital certificates for participants of any event in universities, colleges, schools, institutes, and small businesses.</p>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section id="tech">
+  <div class="container">
+    <h2>Tech Stack</h2>
+    <div class="cards">
+      <div class="card"><h3>Frontend</h3><p>HTML, CSS, JavaScript, React.js, Bootstrap</p></div>
+      <div class="card"><h3>Backend</h3><p>Node.js, Express.js</p></div>
+      <div class="card"><h3>Database</h3><p>MongoDB, Firebase</p></div>
+      <div class="card"><h3>Security</h3><p>JWT, HTTPS, Role-based Access, Encryption</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Documentation -->
+<section id="docs" style="background:#1a1a1a;">
+  <div class="container">
+    <h2>Documentation Guide</h2>
+    <div class="cards">
+      <div class="docs"><h4>Getting Started</h4><p>Step-by-step guide to install and configure Certiwall.<br><a href="#">Read More</a></p></div>
+      <div class="docs"><h4>API Reference</h4><p>Integrate certificate generation and verification in your apps.<br><a href="#">Read More</a></p></div>
+      <div class="docs"><h4>User Manual</h4><p>Guide for administrators and participants.<br><a href="#">Read More</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <h2>Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial"><p><strong>Rohit Kumar:</strong> "Certiwall made distributing certificates for our university events seamless and secure."</p></div>
+      <div class="testimonial"><p><strong>Anita Sharma:</strong> "Amazing interface and easy management for all our workshops!"</p></div>
+      <div class="testimonial"><p><strong>Vikas Reddy:</strong> "A reliable solution for small businesses issuing certificates."</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Users -->
+<section id="users" style="background:#1a1a1a;">
+  <div class="container">
+    <h2>Our Users</h2>
+    <div class="users">
+      <div class="user"><h4>University A</h4></div>
+      <div class="user"><h4>College B</h4></div>
+      <div class="user"><h4>School C</h4></div>
+      <div class="user"><h4>Institute D</h4></div>
+      <div class="user"><h4>Small Business E</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- Security Hall of Fame -->
+<section id="hof">
+  <div class="container">
+    <h2>Security Hall of Fame</h2>
+    <div class="hof">
+      <p>Certiwall acknowledges ethical hackers and security researchers who contributed to improving our platform’s security. Their efforts keep our users safe and our platform robust.</p>
+      <ul>
+Looking for Geniuns
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Certiwall. All rights reserved.
+</footer>
+
+<script>
+function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+</script>
+
+</body>
+</html>
